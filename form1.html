@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validating Forms with JS</title>
+</head>
+<body >
+	<style type="text/css" class="img-fluid">
+		body{
+
+			background-image: url(new.jpg);
+			background-width:500px;
+
+			/*background-position: center;*/
+		}
+	</style>
+	
+<form action="processData.html" onsubmit="return validateData();">
+	<center>Name<span style="color: red">*</span><br>
+		<input type="text" id="userName" placeholder="Your Name"><br>
+	Address<span style="color: red">*</span><br>
+		<input type="text" id="userAddress" placeholder="Your Address"><br>
+	Email<span style="color: red">*</span><br>
+		<input type="text" id="userEmail" placeholder="Your Email"><br>
+	contact number<span style="color: red">*</span><br>
+		+91<input type="text" id="userPhone" placeholder="Your Phone"><br>
+	Age(optional)<br><input type="Number" id="userAge" placeholder="Your Age"><br>
+	Gender<span style="color: red">*</span><br>
+	<input type="radio" id="userGender" name="gender"> Male
+	<input type="radio" id="userGender" name="gender"> Female
+	<input type="radio" id="userGender" name="gender"> Prefer not to say<br>
+	<br><input type="submit" value="REGISTER">
+</form></center>
+
+
+
+<script type="text/javascript">
+	function validateData(){
+		var userName = document.getElementById("userName");
+		var userAddress = document.getElementById("userAddress");
+		var userEmail=document.getElementById("userEmail");
+		var userPhone = document.getElementById("userPhone");
+		var userAge= document.getElementById("userAge");
+		var userGender=document.querySelector('input[name=userGender]:checked');
+		
+		if(userName.value == ""){
+			alert("We don't like blank names...");
+			userName.focus();
+			return false;
+		}
+		else if(!isNaN(userName.value)){
+			alert("Names can't include digits");
+			userName.value = "";
+			userName.focus();
+			return false;
+		}
+		else if(!userAddress.value.length){
+			alert("Please Enter the Address");
+			userAddress.focus();
+			return false;
+		}
+		else if(!userEmail.value.length){
+			alert("Please enter the Email");
+			userEmail.focus();
+			return false;
+		}
+
+		else if(!userPhone.value.length){
+			alert("Phone Number is required");
+			userPhone.focus();
+			return false;
+		}
+		else if(isNaN(userPhone.value)){
+			alert("Please enter the correct phone number");
+			userPhone.value = "";
+			userPhone.focus();
+			return false;
+		}
+		else if(!userEmail.value.length){
+			alert("Please enter the Email");
+			userEmail.focus();
+			return false;
+		}
+		else if(userGender.checked=="none"){
+			msg.innerHTML="please select gender"
+			alert("please select Gender");
+			userGender.focus();
+			return false;
+		}
+
+		return true;
+	}
+</script>
+
+</body>
+</html>

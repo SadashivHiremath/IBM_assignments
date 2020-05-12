@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Getting started with JS</title>
+</head>
+<body>
+	
+	<div id="myDiv">
+
+
+	</div>
+
+	<p class="somePara">
+		Sample Text
+
+	</p>
+	<!--All the JS could woudl go here -->
+<script type="text/javascript">
+	//Write something on the console
+	console.log("This message would be displayed on the console...");
+
+	//Write something on the main screen
+	document.write("We are now getting started with JS...");
+
+	//Display this message in the alert
+	alert("This come in the popup");
+
+	// Get a hold of id myDiv
+	document.getElementById("myDiv").innerHTML="This text comes from javascript...";
+
+	//Get a hold of the class somepara and change the content
+	document.getElementByClassName('somePara')[0].innerHTML="Data changed from JS";
+</script>
+
+</body>
+</html>
